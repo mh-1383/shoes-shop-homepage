@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="build/main.css">
+    <script src="https://kit.fontawesome.com/656b3ae787.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
+    <link href="https://cdn.fontcdn.ir/Font/Persian/Vazir/Vazir.css" rel="stylesheet" type="text/css" />
+    <link rel="icon" href="./images/shoes2.png" type="image/png">
+    <title>shoes shop</title>
+
+</head>
+
+<body dir="rtl" style="background-color: #FBFBFB;">
+
+         <div class="main  h-auto overflow-x-hidden z-40" >
+            <!-- منوی همبرگری مخصوص هدر  -->
+            <article id="hambur-header" class="fixed top-0 right-0 h-full w-[70%] bg-gray-800 z-[100] transform translate-x-full opacity-0 transition-all ease-in-out duration-300 overflow-y-auto no-scrollbar text-left  gap-8 p-2 text-white">
+            <i class="fa-solid fa-circle-xmark   text-2xl hover:cursor-pointer" id="exit-icon"></i>
+            <!-- لوگو -->
+            <div class="w-full h-12  flex justify-center items-center ">
+              <img src="./images/ChatGPT Image Jun 5, 2025, 05_11_54 PM.png" alt="آرتین شاپ" class=" w-[50%] object-contain">
+            </div>
+            <!-- فرم جستجو -->
+            <form class="w-full md:w-[90%] mx-auto mt-7">
+              <div class="relative">
+                <input type="search"
+                  class="w-full p-2.5 pl-10 pr-4 text-sm text-gray-900 bg-gray-100 border border-gray-300 rounded-md focus:ring-pu focus:border-purple-700"
+                  placeholder="جستجوی محصولات" required />
+                <button type="submit"
+                  class="absolute top-1/2 left-3 -translate-y-1/2 text-gray-500 hover:text-purple-700">
+                  <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
+                  </svg>
+                </button>
+              </div>
+            </form>
+
+            <!-- ورود / ثبت نام -->
+            <section class="bg-purple-600 text-white text-sm text-center py-2 rounded-md mt-7">
+              <a href="#" class="font-semibold hover:underline">ورود</a>
+              <span class="mx-1">/</span>
+              <a href="#" class="font-semibold hover:underline">ثبت‌ نام</a>
+            </section>
+
+            <!-- دکمه سبد خرید -->
+            <button class="mt-7 w-[60%] mx-auto rounded-lg p-2 bg-purple-600 hover:bg-gradient-to-r from-purple-950 to-purple-800  text-white flex items-center justify-center gap-2  transition-all">
+              <i class="fa-solid fa-cart-shopping"></i>
+              <span>سبد خرید</span>
+            </button>
+
+            <!-- منوی موبایل -->
+            <div id="mobile-menu" class=" bg-white text-purple-700 rounded-md overflow-hidden shadow-md mt-7 text-right ">
+                <!-- محتوای داینامیک اینجا Inject می‌شه -->
+            </div>
+          </article>
+
+          <div class="bg-black bg-opacity-25  hidden h-full w-full fixed top-0 right-0 z-[99]" id="black"></div>
+            <!-- دکمه همبرگری برای هدر-->
+            <div class="md:hidden flex justify-start px-4 py-2">
+              <button id="menu-toggle2" class="text-purple-800 focus:outline-none">
+                <!-- آیکون همبرگری -->
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+              </button>
+            </div>
+           
+          <header class="bg-gradient-to-r  bg-purple-950 text-gray-200 flex md:flex-row max-md:hidden items-center justify-around">
+  
+            <!-- لوگو -->
+            <div class="  w-40 flex justify-center items-center">
+              <img src="./images/ChatGPT Image Jun 5, 2025, 05_11_54 PM.png" alt="آرتین شاب" class="w-[60%]">
+            </div>
+
+            <!-- فرم جستجو -->
+            <div class="w-full md:w-[40%]">
+              <form class="w-full px-4 md:px-0">
+                <div class="relative w-full">
+                  <input type="search"
+                    class="w-full p-2.5 pl-10 pr-4 text-sm text-black bg-white border border-gray-600 rounded-md  focus:border-purple-500 placeholder-gray-400"
+                    placeholder="جستجوی محصولات" required />
+                  <button type="submit"
+                    class="absolute top-1/2 left-3 transform -translate-y-1/2 text-black hover:text-purple-950">
+                    <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
+                    </svg>
+                  </button>
+                </div>
+              </form>
+            </div>
+
+            <!-- ورود / ثبت نام -->
+            <section class="font-bold text-base text-center flex gap-2 items-center">
+              <a href="#" class="text-gray-200 hover:text-purple-300 ">ورود</a>
+              <span class="text-gray-300 ">/</span>
+              <a href="#" class="text-gray-200 hover:text-purple-300 ">ثبت نام</a>
+            </section>
+
+            <!-- دکمه سبد خرید -->
+            <button type="button"
+              class="w-full md:w-[150px] rounded-lg p-2 bg-purple-500 hover:bg-gradient-to-r from-purple-950 to-purple-800 text-white font-semibold flex items-center justify-center gap-2 transition">
+              <i class="fa-solid fa-cart-shopping text-white"></i>
+              <span>سبد خرید</span>
+            </button>
+        </header>
+        
+          
+            <nav class="bg-white/50  backdrop-blur-md border-t max-md:border-none border-gray-700 w-full z-[999]  shadow-md relative " id="nav">
+              <!-- منوی دسکتاپ -->
+              <ul class="flex items-center max-xl:gap-10  max-md:hidden justify-center h-[60px] lg:gap-20 border-b border-gray-700 text-purple-700 " id="pc-menu">
+                <!-- آیتم‌ها به صورت داینامیک اضافه میشن -->
+              </ul>
+            </nav>
+
+
+
+              <!-- منوی موبایل جداگانه -->
+  
+
+          <main >
+            <section class="  p-7 flex flex-col-reverse lg:flex-row gap-5 items-center justify-center">
+              <!-- متن خوش‌آمدگویی -->
+              <article class="w-full lg:w-1/2 flex flex-col justify-center gap-7 items-center text-center lg:text-right " >
+                  <div id="type-text" class="text-2xl md:text-3xl font-normal"></div>
+              
+               <a href="#" class="bg-gradient-to-r lg:text-xl from-purple-950 to-purple-800 hover:text-2xl text-white p-2 px-6 rounded-md  md:text-base transition-all duration-300 shadow-md" >همین حالا خرید کن!</a>
+              </article>
+          
+              <!-- اسلایدر -->
+              <article class="w-full lg:w-1/2 rounded-[4%] overflow-hidden relative shadow-2xl flex items-center justify-center"
+              style="background: linear-gradient(to bottom right, #6a11cb, #2575fc);">
+              
+              <div class="swiper main-swiper w-full  aspect-[4/3] md:aspect-[16/9]">
+                <div class="swiper-wrapper cursor-pointer" id="slide1">
+                  <!-- اسلایدها -->
+                </div>
+                <div class="swiper-pagination main-pagination"></div>
+              </div>
+
+            </article>
+
+          
+            </section>
+
+                <section class=" h-auto mt-4 p-14 ">
+                  <div class=" p-6 flex flex-col gap-2">
+                  <h1 class="text-center text-purple-900 text-xl font-bold ">محصولات</h1>
+                  <hr>
+                </div>
+                  <section class="h-auto  my-section p-2 flex flex-wrap justify-center gap-5 mb-9" id="products-container">
+                      <!-- کارت‌ها به صورت داینامیک اینجا قرار می‌گیرن -->
+                  </section>
+                  <button id="view-more-btn" class="block md:hidden mx-auto mt-4 px-4 py-2 bg-purple-600 text-white rounded-md">
+                    مشاهده بیشتر
+                  </button>
+                  
+                  <section class="h-auto from-left bg-purple-700 rounded-md mt-3 p-7 flex flex-row max-md:flex-col gap-6 font-medium mb-9 text-white">
+                    <!-- متن -->
+                    <article class="w-[80%] max-md:w-full p-4 flex flex-col justify-evenly gap-4">
+                      <h1 class="text-2xl max-md:text-xl">50 درصد تخفیف ویژه</h1>
+                      <p class="text-sm leading-relaxed text-justify">
+                        لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله...
+                      </p>
+                      <a href="#" class="bg-gray-800  w-[40%] max-md:w-[70%] p-2 rounded-lg text-center max-md:self-center">مشاهده تخفیفات</a>
+                    </article>
+                  
+                    <!-- تصویر -->
+                    <article class="w-[20%] max-md:w-full h-auto flex justify-center items-center">
+                      <img src="./images/shoes1.webp"
+                           alt="کفش تخفیف‌دار"
+                           class="w-full max-w-[200px] h-auto object-contain" />
+                    </article>
+                    
+                  </section>
+                  
+                  <section class="h-auto from-right  p-2 flex justify-between flex-wrap gap-5 mb-9 " id="products-container2">
+
+                   <!-- کارت‌ها به صورت داینامیک اینجا قرار می‌گیرن -->
+
+                  </section>
+
+                 <section class="flex flex-col lg:flex-row gap-6 mb-9">
+                <!-- کارت اول -->
+                <article class="bg-purple-600 cursor-pointer my-section  hover:bg-purple-700 w-full lg:w-1/2 p-4 md:p-6 flex flex-col md:flex-row items-center rounded-2xl text-white">
+                  <!-- متن -->
+                  <div class="w-full md:w-1/2 flex flex-col gap-3 md:gap-5 text-center md:text-right">
+                    <h1 class="text-lg md:text-xl lg:text-2xl font-bold">فروش تابستانه</h1>
+                    <p class="text-sm md:text-base lg:text-lg">انواع محصولات درجه یک</p>
+                    <a href="#" class="bg-gray-800 text-center text-white text-sm md:text-base p-2 md:p-3 rounded-lg w-full md:w-3/4 mx-auto md:mx-0">مشاهده تخفیفات</a>
+                  </div>
+                  <!-- عکس -->
+                  <div class="w-full md:w-1/2 flex justify-center mt-5 md:mt-0">
+                    <img src="./images/shoes5.png" alt="فروش تابستانه" class="max-w-[70%] md:max-w-[80%]">
+                  </div>
+                </article>
+
+                <!-- کارت دوم -->
+                <article class="bg-purple-500 cursor-pointer my-section w-full hover:bg-purple-700 lg:w-1/2 p-4 md:p-6 flex flex-col md:flex-row items-center rounded-2xl text-white">
+                  <!-- متن -->
+                  <div class="w-full md:w-1/2 flex flex-col gap-3 md:gap-5 text-center md:text-right">
+                    <h1 class="text-lg md:text-xl lg:text-2xl font-bold">شگفت‌انگیزهای روز</h1>
+                    <p class="text-sm md:text-base lg:text-lg">50% تخفیف تمامی کفش‌ها در حراج کده بهارستان 1404</p>
+                    <a href="#" class="bg-gray-800 text-white text-center text-sm md:text-base p-2 md:p-3 rounded-lg w-full md:w-3/4 mx-auto md:mx-0">رفتن به حراج کده</a>
+                  </div>
+                  <!-- عکس -->
+                  <div class="w-full md:w-1/2 flex justify-center mt-5 md:mt-0">
+                    <img src="./images/shoes4.webp" alt="شگفت انگیزهای روز" class="max-w-[70%] md:max-w-[80%]">
+                  </div>
+                </article>
+              </section>
+              <button id="back-to-top" class=" fixed bottom-6 right-6 w-12 h-12 bg-purple-700 text-white rounded-full shadow-lg flex items-center justify-center z-[300] transition-opacity duration-300 opacity-0 hover:bg-purple-950">↑</button>
+                  <section class="h-auto from-right   p-2 flex justify-between flex-wrap gap-5 mb-9 " id="products-container3">
+                     <!-- کارت‌ها به صورت داینامیک اینجا قرار می‌گیرن -->
+                  </section>
+
+                  <section class="py-8 h-auto ">
+                    <!-- تب‌ها -->
+                    <div class="flex justify-center space-x-4 mb-6">
+                      <button class="tab-btn active-tab text-black px-4 py-2" data-tab="newest">جدیدترین</button>
+                      <button class="tab-btn text-black px-4 py-2" data-tab="bestseller">پرفروش‌ترین</button>
+                    </div>
+                  
+                    <!-- اسلایدر جدیدترین -->
+                    <div class="tab-content" id="newest">
+                      <div class="swiper newest-swiper ">
+                        <div class="swiper-wrapper p-5  " id="sliders-container">
+                          <!-- اسلاید نمونه -->
+                           <!-- کارت‌ها به صورت داینامیک اینجا قرار می‌گیرن -->
+                        </div>
+
+                      </div>
+                      <div class="swiper-pagination newest-pagination"></div>
+
+                    </div>
+                  
+                    <!-- اسلایدر پرفروش‌ترین -->
+                    <div class=" tab-content best hidden" id="bestseller">
+                      <div class="swiper bestseller-swiper px-4">
+                        <div class="swiper-wrapper p-5 "  id="sliders-container2">
+                          <!-- نمونه محصول پرفروش -->
+                           <!-- کارت‌ها به صورت داینامیک اینجا قرار می‌گیرن -->
+                          <!-- بقیه اسلایدها... -->
+                        </div>
+
+                      </div>
+                      <div class="swiper-pagination bestseller-pagination"></div>
+                    </div>
+                  </section>    
+                  <section class="h-auto flex flex-col md:flex-row bg-gray-100 rounded-xl overflow-hidden">
+                  <!-- متن خبرنامه -->
+                  <article class="w-full md:w-3/5 h-auto p-5 flex flex-col gap-4 justify-center text-center md:text-right">
+                    <p class="text-lg md:text-xl text-blue-600 font-bold">ثبت‌نام در خبرنامه</p>
+                    <p class="text-sm md:text-base leading-relaxed">
+                      اولین نفری باشید که از جدیدترین محصولات، جشنواره‌ها و فروش‌های ویژه ما مطلع می‌شوید.
+                    </p>
+                  </article>
+
+                  <!-- فرم خبرنامه -->
+                  <article class="w-full md:w-2/5 h-auto p-5 flex items-center justify-center">
+                    <form action="" method="post" class="flex flex-col sm:flex-row gap-3 w-full sm:w-[90%] md:w-full">
+                      <input type="tel" placeholder="شماره موبایل"  class="rounded-md border border-gray-400 p-2 w-full sm:w-[65%] text-sm focus:outline-none focus:ring-2 focus:ring-purple-700">
+                      <button type="submit" class="bg-purple-900 text-white w-full sm:w-[30%] rounded-md p-2 text-sm hover:bg-purple-800 transition">
+                        ارسال
+                      </button>
+                    </form>
+                  </article>
+                </section>
+                 </section>                  
+              </main>
+
+              <hr>
+           <footer class="bg-purple-950 text-gray-200 text-sm md:text-base">
+            <!-- پشتیبانی و لینک‌ها -->
+            <section class="flex flex-col md:flex-row justify-between p-5 gap-4">
+              <article class="w-full md:w-1/2 flex flex-col md:flex-row md:justify-evenly gap-2">
+                <p>پشتیبانی 24 ساعته در هر روز هفته</p>
+                <p>تلفن پشتیبانی کالا: 0912321</p>
+              </article>
+              <article class="w-full md:w-1/2">
+                <ul class="flex flex-wrap justify-around md:justify-evenly gap-2">
+                  <li><a href="#" class="hover:text-yellow-400">راهنما</a></li>
+                  <li><a href="#" class="hover:text-yellow-400">فروشگاه</a></li>
+                  <li><a href="#" class="hover:text-yellow-400">پرسش‌های متداول</a></li>
+                  <li><a href="#" class="hover:text-yellow-400">سبد خرید</a></li>
+                </ul>
+              </article>
+            </section>
+
+            <hr class="border-t border-white my-4">
+
+            <!-- دسته‌بندی و شبکه‌های اجتماعی -->
+            <section class="flex flex-col lg:flex-row p-4 gap-8 ">
+              <!-- لیست‌ها -->
+              <div class="w-full lg:w-1/2 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+                <article class="flex  max-sm:items-center  flex-col gap-2 ">
+                  <p class="font-bold">دسته‌بندی‌ها</p>
+                  <ul class="space-y-1 max-sm:text-center ">
+                    <li class="hover:text-yellow-400 transition cursor-pointer">زنانه</li>
+                    <li class="hover:text-yellow-400 transition cursor-pointer">مردانه</li>
+                    <li class="hover:text-yellow-400 transition cursor-pointer">بچگانه</li>
+                    <li class="hover:text-yellow-400 transition cursor-pointer">زیبایی و سلامت</li>
+                  </ul>
+                </article>
+                <article class="flex max-sm:items-center flex-col gap-2 ">
+                  <p class="font-bold">برندهای مهم</p>
+                  <ul class="space-y-1 max-sm:text-center">
+                    <li class="hover:text-yellow-400 transition cursor-pointer">کفش نایک</li>
+                    <li class="hover:text-yellow-400 transition cursor-pointer">کفش آدیداس</li>
+                    <li class="hover:text-yellow-400 transition cursor-pointer">کفش جردن</li>
+                    <li class="hover:text-yellow-400 transition cursor-pointer">کفش سالامون</li>
+                  </ul>
+                </article>
+                <article class="flex max-sm:items-center flex-col gap-2 ">
+                  <p class="font-bold">خدمات ما</p>
+                  <ul class="space-y-1 max-sm:text-center">
+                    <li class="hover:text-yellow-400 transition cursor-pointer">درباره ما</li>
+                    <li class="hover:text-yellow-400 transition cursor-pointer">تماس با ما</li>
+                    <li class="hover:text-yellow-400 transition cursor-pointer">همکاری تجاری</li>
+                    <li class="hover:text-yellow-400 transition cursor-pointer">قوانین و مقررات</li>
+                  </ul>
+                </article>
+              </div>
+
+              <!-- شبکه‌های اجتماعی و نمادها -->
+              <div class="w-full lg:w-1/2 flex flex-col gap-6">
+                <article class="flex justify-center lg:justify-end gap-8 text-xl cursor-pointer  ">
+                  <i class="fa-brands fa-instagram hover:text-yellow-400 transition"></i>
+                  <i class="fa-brands fa-facebook-f hover:text-yellow-400 transition"></i>
+                  <i class="fa fa-whatsapp hover:text-yellow-400 transition"></i>
+                  <i class="fa-brands fa-amazon hover:text-yellow-400 transition"></i>
+                </article>
+                <article class="flex justify-center lg:justify-end gap-4">
+                  <img src="./images/samandehi.png" alt="ساماندهی" class="w-16 md:w-20">
+                  <img src="./images/etehad.png" alt="اتحادیه" class="w-16 md:w-20">
+                  <img src="./images/enamad.png" alt="نماد اعتماد" class="w-16 md:w-20">
+                </article>
+              </div>
+            </section>
+
+            <section class="px-5 pt-6">
+              <p class="font-bold mb-2">درباره ما</p>
+              <p class="text-justify leading-relaxed">
+                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطر آنچنان که لازم است...
+              </p>
+            </section>
+
+            <hr class="border-t border-white my-4">
+            <p class="text-center py-3 cursor-pointer text-sm font-medium hover:text-yellow-300 ">طراحی توسط محمدحسین اسلامی</p>
+          </footer>
+
+
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+        <script src="dropdownPC.js"></script>
+        <script src="./daynamic.js" ></script>
+        <script src="./slider.js"></script>
+        <script src="./tabs.js"></script>
+        <script src="./hamburgurHeader.js"></script>
+        <script src="./backTop.js"></script>
+        <script src="./dropdownMobile.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/typeit@8.7.1/dist/index.umd.js"></script>
+        <script src="nav.js"></script>
+        <script src="https://unpkg.com/scrollreveal"></script>
+        <script src="./effect.js"></script>
+ 
+</body>
+</html>
