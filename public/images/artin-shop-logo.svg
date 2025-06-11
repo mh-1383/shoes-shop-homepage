@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="300" height="100" viewBox="0 0 300 100" xmlns="http://www.w3.org/2000/svg">
+    <!-- Background with gradient -->
+    <defs>
+        <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#4F46E5;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#7C3AED;stop-opacity:1" />
+        </linearGradient>
+    </defs>
+    
+    <!-- Main background -->
+    <rect width="300" height="100" rx="15" fill="url(#logoGradient)"/>
+    
+    <!-- Decorative elements -->
+    <circle cx="50" cy="50" r="15" fill="rgba(255,255,255,0.2)"/>
+    <circle cx="250" cy="50" r="15" fill="rgba(255,255,255,0.2)"/>
+    
+    <!-- Text shadow for depth -->
+    <text x="150" y="60" 
+          font-family="Arial, 'Noto Sans Arabic', sans-serif" 
+          font-size="36" 
+          fill="rgba(0,0,0,0.2)" 
+          text-anchor="middle" 
+          dominant-baseline="middle"
+          transform="translate(3,3)">
+        آرتین شاپ
+    </text>
+    
+    <!-- Main text -->
+    <text x="150" y="60" 
+          font-family="Arial, 'Noto Sans Arabic', sans-serif" 
+          font-size="36" 
+          fill="white" 
+          text-anchor="middle" 
+          dominant-baseline="middle">
+        آرتین شاپ
+    </text>
+    
+    <!-- Tagline -->
+    <text x="150" y="85" 
+          font-family="Arial, 'Noto Sans Arabic', sans-serif" 
+          font-size="12" 
+          fill="rgba(255,255,255,0.8)" 
+          text-anchor="middle">
+        فروشگاه آنلاین
+    </text>
+</svg> 
